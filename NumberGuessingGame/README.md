@@ -1,4 +1,4 @@
-# Number Guessing Game — Java Development (OIBSIP)
+# Number Guessing Game — Java Development 
 
 ## Objective
 Console-based game where the computer picks a random number (1–100) 
@@ -17,6 +17,3 @@ Java (console application)
 ## How to Run
 1. Compile: `javac NumberGuessingGame.java`
 2. Run: `java NumberGuessingGame`
-
-## Demo Video
-[LinkedIn link here]

@@ -1,4 +1,4 @@
-# ATM Interface — Java Development (OIBSIP)
+# ATM Interface — Java Development 
 
 ## Objective
 Console-based ATM simulation with PIN authentication and standard 
@@ -29,6 +29,3 @@ Java (console application, Object-Oriented design)
 ## How to Run
 1. Compile: `javac *.java`
 2. Run: `java Main`
-
-## Demo Video
-[LinkedIn link here]

@@ -20,7 +20,9 @@ public class ATM {
             System.out.print("Enter PIN: ");
             String pin = scanner.nextLine();
             account = bank.authenticate(userId, pin);
-            if (account != null) break;
+            if (account != null) {
+                break;
+            }
             attempts++;
             System.out.println("Incorrect PIN. Attempts left: " + (3 - attempts));
         }
@@ -47,15 +49,15 @@ public class ATM {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "1" -> {
+                case "1":
                     System.out.println("--- Transaction History ---");
                     if (account.getHistory().isEmpty()) {
                         System.out.println("No transactions yet.");
                     } else {
                         account.getHistory().forEach(System.out::println);
                     }
-                }
-                case "2" -> {
+                    break;
+                case "2":
                     System.out.print("Enter amount to withdraw: ");
                     double withdrawAmt = Double.parseDouble(scanner.nextLine());
                     if (account.withdraw(withdrawAmt)) {
@@ -63,14 +65,14 @@ public class ATM {
                     } else {
                         System.out.println("Insufficient Funds.");
                     }
-                }
-                case "3" -> {
+                    break;
+                case "3":
                     System.out.print("Enter amount to deposit: ");
                     double depositAmt = Double.parseDouble(scanner.nextLine());
                     account.deposit(depositAmt);
                     System.out.println("Deposit successful. New balance: Rs." + account.getBalance());
-                }
-                case "4" -> {
+                    break;
+                case "4":
                     System.out.print("Enter recipient account ID: ");
                     String toId = scanner.nextLine();
                     Account toAccount = bank.getAccount(toId);
@@ -87,12 +89,14 @@ public class ATM {
                             System.out.println("Transfer successful. New balance: Rs." + account.getBalance());
                         }
                     }
-                }
-                case "5" -> {
+                    break;
+                case "5":
                     System.out.println("Thank you for using the ATM. Goodbye!");
                     running = false;
-                }
-                default -> System.out.println("Invalid option. Try again.");
+                    break;
+                default:
+                    System.out.println("Invalid option. Try again.");
+                    break;
             }
         }
     }
